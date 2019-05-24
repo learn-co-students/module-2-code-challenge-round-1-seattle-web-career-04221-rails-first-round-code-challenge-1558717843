@@ -4,7 +4,15 @@ class HeroinesController < ApplicationController
   end
 
   def show
-    @heroine = Heroine.find(params[:id])
+    if params[:id] == "search"
+
+      @power = Power.find_by(name: params[:q])
+      @heroines = Heroine.where(power_id: @power.id)
+      render :search
+      return
+    else
+      @heroine = Heroine.find(params[:id])
+    end
   end
 
   def new
@@ -14,6 +22,11 @@ class HeroinesController < ApplicationController
   def create
     @heroine = Heroine.create(heroine_params)
     redirect_to @heroine
+  end
+
+  def search
+    # byebug
+    # @heroines = Heroine.where(search: params[:q])
   end
 
   private
