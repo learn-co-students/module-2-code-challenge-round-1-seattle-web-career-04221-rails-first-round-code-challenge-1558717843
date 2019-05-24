@@ -1,0 +1,8 @@
+<h2>Hero Page</h2>
+<label>Name: </label>
+<%= @heroine.name %><br>
+<label>Super Name: </label>
+<%= @heroine.super_name%><br>
+<label>Power: </label>
+<%= link_to "#{@heroine.power.name}", @heroine.power%><br>
+<%= link_to "Home", heroines_path%>

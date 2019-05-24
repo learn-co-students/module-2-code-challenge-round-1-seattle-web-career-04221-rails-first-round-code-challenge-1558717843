@@ -1,9 +1,11 @@
 <h2>All Heroines</h2>
 
 <ul>
+  <%= link_to "Create Heroine", new_heroine_path%>
+  <p></p>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
