@@ -1,0 +1,10 @@
+<h1><%="#{@heroine.super_name}'s Page"%></h1>
+
+Details:
+<ul>
+<li>Name: <%= @heroine.name%> </li>
+<li>Super Name: <%= @heroine.super_name%> </li>
+<li>Power: <%= link_to @heroine.power.name, power_path(@heroine.power)%> </li>
+
+
+</ul>
