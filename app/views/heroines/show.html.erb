@@ -1,0 +1,7 @@
+<h1><%="#{@heroine.super_name}'s Profile"%></h1><br>
+
+<h3><%= "Given Name: #{@heroine.name}"%></h3><br>
+
+<h3><%= "Super Hero Name: #{@heroine.super_name}"%></h3><br>
+
+<h4>Superpower: <%= link_to @heroine.power.name, @heroine.power %></h4>
