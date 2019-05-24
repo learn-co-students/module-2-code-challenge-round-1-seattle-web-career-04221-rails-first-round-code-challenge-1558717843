@@ -36,6 +36,16 @@ before_action :set_heroine, only: [:edit, :show, :update]
     end
   end
 
+  def search
+      super_power = Power.find_by(name: params[:q])
+
+     @heroines = Heroine.all.where(power: super_power)
+     
+
+
+    render :index
+  end
+
 
 
 
