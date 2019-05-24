@@ -1,6 +1,6 @@
 class HeroinesController < ApplicationController
   def index
-    @heroines = Heroine.all
+    @heroines = Heroine.search(params[:q])
   end
   def new
     @heroine = Heroine.new
@@ -15,13 +15,13 @@ class HeroinesController < ApplicationController
   end
   def show
     @heroine = Heroine.find(params[:id])
-    @power = @heroine.power 
+    @power = @heroine.power
   end
 
 private
 
   def heroine_params()
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :q)
   end
 
 end
